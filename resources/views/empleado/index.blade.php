@@ -1,0 +1,73 @@
+@extends('layouts.app')
+@section('template_title')
+    Empleados
+@endsection
+@section('content')
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span id="card_title">{{ __('Empleados') }}</span>
+                            <div class="float-right">
+                                <a href="{{ route('empleados.create') }}" class="btn btn-primary btn-sm">+ Nuevo Empleado</a>
+                            </div>
+                        </div>
+                    </div>
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success m-4"><p>{{ $message }}</p></div>
+                    @endif
+                    <div class="card-body bg-white">
+                        <div class="table-responsive">
+                            <table id="example" class="table table-striped table-hover">
+                                <thead class="thead">
+                                    <tr>
+                                        <th>No</th>
+                                        <th>DNI</th>
+                                        <th>Nombres</th>
+                                        <th>Apellidos</th>
+                                        <th>Teléfono</th>
+                                        <th>Correo</th>
+                                        <th>Departamento</th>
+                                        <th>Cargo</th>
+                                        <th>Fecha Ingreso</th>
+                                        <th>Estado</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($empleados as $empleado)
+                                        <tr>
+                                            <td>{{ ++$i }}</td>
+                                            <td>{{ $empleado->dni }}</td>
+                                            <td>{{ $empleado->nombres }}</td>
+                                            <td>{{ $empleado->apellidos }}</td>
+                                            <td>{{ $empleado->telefono }}</td>
+                                            <td>{{ $empleado->correo }}</td>
+                                            <td>{{ $empleado->departamento->nombre ?? '-' }}</td>
+                                            <td>{{ $empleado->cargo->nombre ?? '-' }}</td>
+                                            <td>{{ $empleado->fecha_ingreso }}</td>
+                                            <td>{{ $empleado->estado == 1 ? 'Activo' : 'Inactivo' }}</td>
+                                            <td>
+                                                <div style="display:flex; gap:6px; flex-wrap:nowrap;">
+                                                    <a href="{{ route('empleados.show', $empleado->id) }}" style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:8px; border:1.5px solid #6366f1; color:#6366f1; background:#fff; text-decoration:none;" title="Ver"><i class="fas fa-eye" style="font-size:13px;"></i></a>
+                                                    <a href="{{ route('empleados.edit', $empleado->id) }}" style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:8px; border:1.5px solid #10b981; color:#10b981; background:#fff; text-decoration:none;" title="Editar"><i class="fas fa-edit" style="font-size:13px;"></i></a>
+                                                    <form action="{{ route('empleados.destroy', $empleado->id) }}" method="POST" style="margin:0; padding:0;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:8px; border:1.5px solid #ef4444; color:#ef4444; background:#fff; cursor:pointer; padding:0;" title="Eliminar" onclick="return confirm('¿Seguro que deseas eliminar?')"><i class="fas fa-trash" style="font-size:13px;"></i></button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
