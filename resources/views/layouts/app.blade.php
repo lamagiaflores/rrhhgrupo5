@@ -16,212 +16,64 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <style>
-    * { font-family: 'Inter', sans-serif; }
-    body { background: #f0f4ff; }
+            * { font-family: 'Inter', sans-serif; }
+            body { background: #f0f4ff; }
 
-    /* NAVBAR */
-    nav.bg-white {
-        background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%) !important;
-        border-bottom: 1px solid rgba(0,212,255,0.2) !important;
-        box-shadow: 0 2px 20px rgba(0,212,255,0.1);
-    }
-    nav .text-gray-800 { color: #00d4ff !important; }
-    nav a.text-gray-500 { color: rgba(255,255,255,0.85) !important; }
-    nav button.text-gray-500 { color: rgba(255,255,255,0.85) !important; }
-    nav .text-gray-500:hover { color: #00d4ff !important; }
-    nav .text-gray-900 { color: #fff !important; }
-    nav .border-indigo-400 { border-color: #00d4ff !important; }
-    nav .dropdown-menu, .rounded-md.shadow-lg {
-        background: #0f172a !important;
-        border: 1px solid rgba(0,212,255,0.2) !important;
-    }
+            /* NAVBAR */
+            nav.bg-white {
+                background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%) !important;
+                border-bottom: 1px solid rgba(0,212,255,0.2) !important;
+                box-shadow: 0 2px 20px rgba(0,212,255,0.1);
+            }
+            nav .text-gray-800 { color: #00d4ff !important; }
+            nav a.text-gray-500 { color: rgba(255,255,255,0.85) !important; }
+            nav button.text-gray-500 { color: rgba(255,255,255,0.85) !important; }
+            nav .text-gray-500:hover { color: #00d4ff !important; }
+            nav .text-gray-900 { color: #fff !important; }
+            nav .border-indigo-400 { border-color: #00d4ff !important; }
+            nav .dropdown-menu, .rounded-md.shadow-lg {
+                background: #0f172a !important;
+                border: 1px solid rgba(0,212,255,0.2) !important;
+            }
 
-    /* CARDS */
-    .card {
-        border: 1px solid rgba(0,212,255,0.15);
-        border-radius: 16px;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-        background: #fff;
-        overflow: hidden;
-    }
-    .card-header {
-        background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
-        color: white;
-        padding: 1rem 1.5rem;
-        font-weight: 600;
-        font-size: 1rem;
-        border-bottom: 1px solid rgba(0,212,255,0.2);
-    }
-    .card-header a.btn {
-        background: rgba(0,212,255,0.15);
-        border: 1px solid rgba(0,212,255,0.4);
-        color: #00d4ff;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        transition: all 0.2s;
-    }
-    .card-header a.btn:hover {
-        background: rgba(0,212,255,0.3);
-        color: #fff;
-    }
+            /* CARDS */
+            .card {
+                border: 1px solid rgba(0,212,255,0.15);
+                border-radius: 16px;
+                box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+                background: #fff;
+                overflow: hidden;
+            }
+            .card-header {
+                background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+                color: white;
+                padding: 1rem 1.5rem;
+                font-weight: 600;
+                font-size: 1rem;
+                border-bottom: 1px solid rgba(0,212,255,0.2);
+            }
 
-    /* TABLES */
-    table.table thead tr th, 
-table.table thead th,
-.dataTables_wrapper .table thead th {
-    background-color: #000000 !important; /* Fondo negro */
-    color: #ffffff !important;           /* Letras blancas */
-    border-color: #000000 !important;
-}
+            /* TABLES */
+            table.table thead tr th, table.table thead th, .dataTables_wrapper .table thead th {
+                background-color: #000000 !important;
+                color: #ffffff !important;
+                border-color: #000000 !important;
+            }
+            .table tbody tr:hover { background: #e8f4ff; }
+            .table tbody td { padding: 0.6rem 0.5rem; vertical-align: middle; color: #1e293b; font-size: 0.82rem; }
 
-/* Opcional: Asegurar que los iconos de ordenamiento sean blancos */
-table.table thead .sorting::before,
-table.table thead .sorting::after,
-table.table thead .sorting_asc::before,
-table.table thead .sorting_asc::after,
-table.table thead .sorting_desc::before,
-table.table thead .sorting_desc::after {
-    color: #ffffff !important;
-    opacity: 0.7 !important;
-}
-    .table tbody tr {
-        transition: all 0.2s;
-        border-bottom: 1px solid #f0f4ff;
-    }
-    .table tbody tr:hover {
-        background: #e8f4ff;
-    }
-    .table tbody td {
-        padding: 0.6rem 0.5rem;
-        vertical-align: middle;
-        color: #1e293b;
-        font-size: 0.82rem;
-        word-break: break-word;
-    }
-    .table tbody td:last-child { white-space: nowrap; min-width: 115px; }
-    .table thead th:last-child { min-width: 115px; }
+            /* BUTTONS - COLORES PERSONALIZADOS */
+            .btn-mi-verde { background: #28a745 !important; color: #fff !important; border: none !important; }
+            .btn-mi-rojo { background: #dc3545 !important; color: #fff !important; border: none !important; }
+            .btn-mi-celeste { background: #0dcaf0 !important; color: #000 !important; border: none !important; }
+            .btn-sm { padding: 0.3rem 0.9rem; font-size: 0.78rem; border-radius: 20px; }
 
-    /* BUTTONS */
-    .btn-primary {
-        background: linear-gradient(135deg, #0ea5e9, #0284c7);
-        border: none;
-        border-radius: 20px;
-        font-weight: 600;
-        font-size: 0.85rem;
-        transition: all 0.2s;
-    }
-    .btn-primary:hover {
-        background: linear-gradient(135deg, #0284c7, #0369a1);
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(14,165,233,0.4);
-    }
-    .btn-success {
-        background: linear-gradient(135deg, #059669, #10b981);
-        border: none;
-        border-radius: 20px;
-        font-weight: 600;
-        font-size: 0.85rem;
-    }
-    .btn-success:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(16,185,129,0.4);
-    }
-    .btn-danger {
-        background: linear-gradient(135deg, #dc2626, #ef4444);
-        border: none;
-        border-radius: 20px;
-        font-weight: 600;
-        font-size: 0.85rem;
-    }
-    .btn-danger:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(239,68,68,0.4);
-    }
-    .btn-secondary {
-        background: linear-gradient(135deg, #475569, #64748b);
-        border: none;
-        border-radius: 20px;
-        font-weight: 600;
-        font-size: 0.85rem;
-    }
-    .btn-sm { padding: 0.3rem 0.9rem; font-size: 0.78rem; }
-
-    /* FORMS */
-    .form-control, .form-select {
-        border-radius: 10px;
-        border: 1.5px solid #cbd5e1;
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-        transition: all 0.2s;
-        background: #f8fafc;
-    }
-    .form-control:focus, .form-select:focus {
-        border-color: #0ea5e9;
-        box-shadow: 0 0 0 3px rgba(14,165,233,0.15);
-        background: #fff;
-    }
-    .form-label {
-        font-weight: 600;
-        color: #0f172a;
-        font-size: 0.82rem;
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
-    }
-
-    /* ALERTS */
-    .alert-success {
-        background: #ecfdf5;
-        border: none;
-        border-left: 4px solid #10b981;
-        border-radius: 10px;
-        color: #065f46;
-        font-weight: 500;
-    }
-
-    /* PAGINATION */
-    .pagination .page-link {
-        border-radius: 8px !important;
-        margin: 0 2px;
-        color: #0ea5e9;
-        border: 1.5px solid #cbd5e1;
-        font-weight: 500;
-        font-size: 0.85rem;
-    }
-    .pagination .page-link:hover { background: #e0f2fe; }
-    .pagination .page-item.active .page-link {
-        background: linear-gradient(135deg, #0ea5e9, #0284c7);
-        border-color: #0ea5e9;
-    }
-
-    /* DATATABLES */
-    div.dataTables_wrapper div.dataTables_filter input {
-        border-radius: 20px;
-        border: 1.5px solid #cbd5e1;
-        padding: 0.4rem 1rem;
-        font-size: 0.85rem;
-    }
-    div.dataTables_wrapper div.dataTables_filter input:focus {
-        border-color: #0ea5e9;
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(14,165,233,0.15);
-    }
-    div.dataTables_wrapper div.dataTables_length select {
-        border-radius: 10px;
-        border: 1.5px solid #cbd5e1;
-        padding: 0.3rem 0.6rem;
-        font-size: 0.85rem;
-    }
-    div.dataTables_wrapper div.dataTables_info {
-        font-size: 0.85rem;
-        color: #64748b;
-        padding-top: 0.75rem;
-    }
-
-    main { padding: 2rem 1rem; }
-    .card-body { padding: 1.5rem; }
-    .min-h-screen { background: #f0f4ff; }
-</style>
+            /* DATATABLES LAYOUT */
+            div.dt-layout-start { display: flex; align-items: center; gap: 20px; }
+            
+            main { padding: 2rem 1rem; }
+            .min-h-screen { background: #f0f4ff; }
+        </style>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -264,13 +116,13 @@ table.table thead .sorting_desc::after {
                             {
                                 extend: 'excelHtml5',
                                 text: '<i class="fas fa-file-excel me-1"></i> Excel',
-                                className: 'btn btn-success btn-sm',
+                                className: 'btn btn-mi-verde btn-sm',
                                 exportOptions: { columns: ':not(:last-child)' }
                             },
                             {
                                 extend: 'pdfHtml5',
                                 text: '<i class="fas fa-file-pdf me-1"></i> PDF',
-                                className: 'btn btn-danger btn-sm',
+                                className: 'btn btn-mi-rojo btn-sm',
                                 exportOptions: { columns: ':not(:last-child)' },
                                 orientation: 'landscape',
                                 pageSize: 'A4'
@@ -278,7 +130,7 @@ table.table thead .sorting_desc::after {
                             {
                                 extend: 'print',
                                 text: '<i class="fas fa-print me-1"></i> Imprimir',
-                                className: 'btn btn-secondary btn-sm',
+                                className: 'btn btn-mi-celeste btn-sm',
                                 exportOptions: { columns: ':not(:last-child)' }
                             }
                         ]
@@ -293,12 +145,7 @@ table.table thead .sorting_desc::after {
                     search: "Buscar:",
                     lengthMenu: "Mostrar _MENU_ registros",
                     info: "Mostrando _START_ a _END_ de _TOTAL_ registros",
-                    paginate: {
-                        first: "Primero",
-                        last: "Último",
-                        next: "Siguiente",
-                        previous: "Anterior"
-                    },
+                    paginate: { first: "Primero", last: "Último", next: "Siguiente", previous: "Anterior" },
                     zeroRecords: "No se encontraron resultados",
                     infoEmpty: "Mostrando 0 registros",
                     infoFiltered: "(filtrado de _MAX_ registros totales)"
