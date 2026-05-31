@@ -67,19 +67,24 @@
     }
 
     /* TABLES */
-    .table { width: 100% !important; }
-    .dataTables_wrapper { width: 100% !important; }
-    .table thead th {
-        background: #0f172a;
-        color: #00d4ff;
-        font-weight: 600;
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        border: none;
-        padding: 0.8rem 0.5rem;
-        white-space: nowrap;
-    }
+    table.table thead tr th, 
+table.table thead th,
+.dataTables_wrapper .table thead th {
+    background-color: #000000 !important; /* Fondo negro */
+    color: #ffffff !important;           /* Letras blancas */
+    border-color: #000000 !important;
+}
+
+/* Opcional: Asegurar que los iconos de ordenamiento sean blancos */
+table.table thead .sorting::before,
+table.table thead .sorting::after,
+table.table thead .sorting_asc::before,
+table.table thead .sorting_asc::after,
+table.table thead .sorting_desc::before,
+table.table thead .sorting_desc::after {
+    color: #ffffff !important;
+    opacity: 0.7 !important;
+}
     .table tbody tr {
         transition: all 0.2s;
         border-bottom: 1px solid #f0f4ff;
